@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, FlatList, Alert, Modal, Pressable, ScrollView, Image } from 'react-native'
-import CheckBox from '@react-native-community/checkbox';
 import React, { useState } from 'react';
 
 
@@ -9,8 +8,7 @@ const Home = () => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [agreed, setAgreed] = useState(false);
-    var accept = false;
-
+  
     const TandC = () => {
         console.log("Welcome");
         Alert.alert("Welcome to Aisense you'r redirect in Login page..!!")
