@@ -2,6 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './component/Home';
+import Record from './component/Record';
+import Demo from './component/Demo';
+import Welcome from './component/Welcome';
+import LogoHeader from './component/LogoHeader';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
@@ -11,20 +15,24 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          header: () => <LogoHeader />, // Use the LogoHeader component as the header
+        }}
+      >
          <Stack.Screen name="Home" component={Home} options={{
-          title: 'Home',
-          headerStyle: {
-            backgroundColor: '#3855f5',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+          // title: 'Home',
+          // headerStyle: {
+          //   backgroundColor: '#3855f5',
+          // },
+          // headerTintColor: '#fff',
+          // headerTitleStyle: {
+          //   fontWeight: 'bold',
+          // },
         }}/> 
-        {/* <Stack.Screen name="login" component={Login} /> */}
-        {/* <Stack.Screen name="SignUp" component={Signup} /> */}
-       {/* <Stack.Screen name="Capture" component={Capture} /> */}
+        
+        <Stack.Screen name="Welcome" component={Welcome} />
+       <Stack.Screen name="Record" component={Record} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -40,5 +48,5 @@ const styles = StyleSheet.create({
 });
 
 
-//  Blue :- #3855f5
-// Orange :- #f56738 
+//  Blue :- #0074d9
+// Orange :- #ff4136 
